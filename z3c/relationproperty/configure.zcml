@@ -1,0 +1,12 @@
+<configure xmlns="http://namespaces.zope.org/zope"
+	   xmlns:monkey="http://namespaces.plone.org/monkey">
+
+  <include package="collective.monkeypatcher" />
+
+  <monkey:patch
+	module="z3c.relationfield.event"
+	original="_potential_relations"
+	replacement=".event._potential_relations"
+    />
+
+</configure>
