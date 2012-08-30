@@ -14,13 +14,11 @@ def _potential_relations(obj):
     """
     for iface in providedBy(obj).flattened():
         for name, field in getFields(iface).items():
-            print '**', name
             frel = name + '_rel'
             _rel = iface.queryTaggedValue(frel)
             if _rel is not None:
                 field = _rel
                 name = frel
-                print '>>>>', name, field, _rel
 
             if IRelation.providedBy(field):
                 try:
